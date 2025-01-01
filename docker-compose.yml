@@ -1,0 +1,13 @@
+services:
+  certbot-nginx-server:
+    image: certbot-nginx-server
+    container_name: certbot-nginx-server
+    build: .
+    ports:
+      - "80:80"
+    volumes:
+      - ./certbot/letsencrypt:/etc/letsencrypt
+      - ./certbot/.well-known/acme-challenge:/var/www/certbot/.well-known/acme-challenge/
+      - ./logs/nginx:/var/log/nginx
+      - ./logs/letsencrypt:/var/log/letsencrypt
+      - ./conf:/etc/nginx/conf.d

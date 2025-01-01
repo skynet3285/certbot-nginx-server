@@ -1,0 +1,10 @@
+# logs
+logs
+
+# TLS Certificates
+certbot
+init_cert.sh
+
+# Configuration files
+conf
+!default copy.conf
