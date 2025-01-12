@@ -1,13 +1,17 @@
 services:
   certbot-nginx-server:
+    build: .
     image: certbot-nginx-server
     container_name: certbot-nginx-server
-    build: .
-    ports:
-      - "80:80"
+    env_file:
+      - .env
     volumes:
       - ./certbot/letsencrypt:/etc/letsencrypt
       - ./certbot/.well-known/acme-challenge:/var/www/certbot/.well-known/acme-challenge/
       - ./logs/nginx:/var/log/nginx
       - ./logs/letsencrypt:/var/log/letsencrypt
       - ./conf:/etc/nginx/conf.d
+      # reference: https://github.com/nginxinc/docker-nginx/blob/master/entrypoint/20-envsubst-on-templates.sh
+      - ./default.conf.template:/etc/nginx/templates/default.conf.template
+    ports:
+      - $EXTERNAL_PORT_HTTP:80

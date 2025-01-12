@@ -7,4 +7,6 @@ init_cert.sh
 
 # Configuration files
 conf
-!default copy.conf
+
+# Environment variables
+.env

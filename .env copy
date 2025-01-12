@@ -1,0 +1,5 @@
+# Nginx Config
+NGINX_SERVER_NAME=localhost
+
+# Docker Compose Config
+EXTERNAL_PORT_HTTP=80

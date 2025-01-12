@@ -2,7 +2,7 @@
 server {
     listen 80;
     listen [::]:80;
-    server_name ${DOMAIN_NAME};
+    server_name ${NGINX_SERVER_NAME};
     
     #access_log  /var/log/nginx/host.access.log  main;
     access_log /var/log/nginx/access.log combined;
