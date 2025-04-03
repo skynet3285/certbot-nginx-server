@@ -59,13 +59,13 @@ certbot-nginx-server는 Let's Encrypt의 인증서를 certbot을 통한 자동 �
 시작할때는 아래와 같이 시작하고
 
 ```bash
-docker-compose up -d
+docker compose up -d
 ```
 
 아래와 같이 종료하면 됩니다.
 
 ```bash
-docker-compose down
+docker compose down
 ```
 
 ### 참고
@@ -73,11 +73,11 @@ docker-compose down
 이미지 관련 에러가 뜨면, 아래와 같이 프로젝트 도커 이미지를 빌드를 해주세요
 
 ```bash
-docker-compose build
+docker compose build
 ```
 
 종료 및 컨테이너 이미지를 깔끔하게 제거합니다.
 
 ```bash
-docker-compose down --rmi all
+docker compose down --rmi all
 ```
