@@ -1,5 +1,5 @@
 docker-compose run -d --service-ports --name temp-certbot-nginx-server --entrypoint \
-    "nginx -g 'daemon off;'" certbot-nginx-server
+    "/docker-entrypoint.sh" certbot-nginx-server nginx -g 'daemon off;'
 
 docker-compose run --rm --name init-certbot --entrypoint "\
     certbot certonly \
