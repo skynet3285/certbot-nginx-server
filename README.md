@@ -12,11 +12,9 @@ certbot-nginx-server는 Let's Encrypt의 인증서를 certbot을 통한 자동 �
 
 `.env copy` : 도커 컴포즈의 구성과 nginx template의 구성을 하는 환경변수입니다.
 
-`default.conf.template` :`default.conf.template`을 기반으로 `conf` 디렉토리에 `default.conf`가 생성됩니다.
+`default.conf.template` : 해당 파일을 기반으로 컨테이너에서 `default.conf`가 생성됩니다
 
 `certbot` : certbot의 설정과 인증서가 저장되는 디렉토리입니다.
-
-`docker-compose.yml` : 서버를 자동으로 구축하기 위한 docker-compose입니다.
 
 ## 프로젝트 셋업
 
@@ -38,7 +36,7 @@ certbot-nginx-server는 Let's Encrypt의 인증서를 certbot을 통한 자동 �
 
 간단한 동작 원리는 `http://&{NGINX_SERVER_NAME}/.well-known/acme-challenge/{token}`에 내가 이 도메인을 소유하고 있다고 증명할수 있는 어떤 파일을 응답하는 식으로 도메인 소유권을 증명합니다. 도메인 소유권이 증명되야 인증서가 발급됩니다.
 
-도커 컴포즈로 실행되면 `.env`와 `default.conf.template`를 통해 컨테이너 내부와 연결된 `conf` 디렉토리에 `default.conf`가 생성됩니다.
+도커 컴포즈로 실행되면 `.env`와 `default.conf.template`를 통해 컨테이너 내부에 `default.conf`가 생성됩니다.
 
 ### 초기 인증서 발급 방법
 
